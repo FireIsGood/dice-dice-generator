@@ -54,7 +54,8 @@ in the message might get cut off at a certain length.
 
 This project is a generator for a game that I made up and the configuration
 file is harder to write than just doing the whole thing by hand. If you really
-wanted to contribute, feel free to make issues or pull request.
+want to contribute regardless of that, feel free to make issues or pull
+requests.
 
 ## License
 
