@@ -14,6 +14,7 @@ use std::fs;
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Config {
     pub name: String,
+    pub rules: Option<String>,
     pub min_length: Option<i32>,
     pub answers: Vec<DiceResult>,
 }
@@ -45,9 +46,9 @@ impl Config {
     /// Prints the configuration file
     ///
     /// Takes a string slice of rules to be printed under the name section.
-    pub fn print(&self, rules: &str) {
+    pub fn print(&self) {
         println!("Config name: {}", self.name);
-        println!("{}", rules);
+        println!("{}", self.rules.clone().unwrap_or("".into()));
         for (index, answer) in answers_padded(self, self.min_length.unwrap_or_default())
             .iter()
             .enumerate()
