@@ -1,0 +1,10 @@
+name       = "all good"
+min_length = 24
+
+answers = [
+    { operation = "explode", number = 4 },
+    { operation = "spin in a circle" },
+    { operation = "spin in a circle" },
+    { operation = "spin in a circle" },
+    { operation = "spin in a circle" },
+]
