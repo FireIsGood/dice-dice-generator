@@ -1,3 +1,4 @@
+//! Argument parsing logic.
 use clap::Parser;
 
 #[derive(Parser, Debug)]

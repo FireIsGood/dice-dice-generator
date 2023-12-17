@@ -1,3 +1,4 @@
+//! Configuration struct
 use crate::{
     args,
     format::{answers_padded, num_to_emoji},
@@ -7,6 +8,9 @@ use clap::Parser;
 use serde::{Deserialize, Serialize};
 use std::fs;
 
+/// Configuration struct.
+///
+/// This holds the data to be deserialized.
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Config {
     pub name: String,
@@ -14,12 +18,18 @@ pub struct Config {
     pub answers: Vec<DiceResult>,
 }
 
+/// Answer struct.
+///
+/// A single answer comprised of an operation and optional number
 #[derive(Serialize, Deserialize, Debug)]
 pub struct DiceResult {
     pub operation: String,
     pub number: Option<i32>,
 }
 
+/// Get the config given a file path.
+///
+/// Bubbles errors through anyhow.
 pub fn get_config() -> anyhow::Result<Config> {
     // Get cli args
     let cli = args::Cli::parse();
@@ -32,6 +42,9 @@ pub fn get_config() -> anyhow::Result<Config> {
 }
 
 impl Config {
+    /// Prints the configuration file
+    ///
+    /// Takes a string slice of rules to be printed under the name section.
     pub fn print(&self, rules: &str) {
         println!("Config name: {}", self.name);
         println!("{}", rules);

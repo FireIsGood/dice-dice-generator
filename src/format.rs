@@ -1,5 +1,7 @@
+//! Formatting to string logic
 use crate::config::Config;
 
+/// Converts an unsigned number to a vector of its digits.
 fn number_to_vec(n: u32) -> Vec<u32> {
     let mut digits = Vec::new();
     let mut n = n;
@@ -12,6 +14,7 @@ fn number_to_vec(n: u32) -> Vec<u32> {
     digits
 }
 
+/// Converts a single digit number to a Discord style emoji.
 pub fn num_to_emoji(num: u32) -> String {
     let mut output = String::new();
     for num in number_to_vec(num) {
@@ -33,6 +36,9 @@ pub fn num_to_emoji(num: u32) -> String {
     output
 }
 
+/// Returns a vector of strings that are padded to the same length.
+///
+/// Also takes a minimum length to pad to.
 pub fn answers_padded(config: &Config, min_len: i32) -> Vec<String> {
     let answer_strings: Vec<String> = config
         .answers
