@@ -9,7 +9,7 @@ Answers may be positive or negative towards score and the player counts the
 score on their own.
 
 It's just a random text game I made up on the spot since I was running out of
-ideas for Minesweeper
+ideas for Minesweeper.
 
 ## Installation
 
