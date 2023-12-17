@@ -11,7 +11,7 @@ score on their own.
 It's just a random text game I made up on the spot since I was running out of
 ideas for Minesweeper.
 
-```text
+```markdown
 Config name: all good
 ## Dice Dice (Day 1984)
 
