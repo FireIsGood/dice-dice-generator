@@ -32,8 +32,9 @@ pub fn get_config() -> anyhow::Result<Config> {
 }
 
 impl Config {
-    pub fn print(&self) {
+    pub fn print(&self, rules: &str) {
         println!("Config name: {}", self.name);
+        println!("{}", rules);
         for (index, answer) in answers_padded(self, self.min_length.unwrap_or_default())
             .iter()
             .enumerate()
